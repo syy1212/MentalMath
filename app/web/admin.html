@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>口算天天练 · 家长管理</title>
+<link rel="stylesheet" href="/assets/css/app.css">
+<script>
+(function () {
+  try {
+    var cached = localStorage.getItem('mm_mode');
+    if (cached === 'dark' || cached === 'light') document.documentElement.setAttribute('data-mode', cached);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body class="admin-page">
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand" id="brand"><img class="brand-mark" src="/assets/img/icon.png" alt=""><span>口算</span><span>天天练</span><small>家长管理</small></div>
+    <div class="today-pill" id="todayPill">今日未开始</div>
+  </div>
+</header>
+
+<nav class="admin-tabs" id="adminTabs" aria-label="家长管理导航">
+  <button class="on" data-tab="banks">题库</button>
+  <button data-tab="stats">记录</button>
+  <button data-tab="settings">设置</button>
+</nav>
+
+<main>
+  <section class="screen active" id="screen-banks">
+    <div class="wrap" id="banksWrap"></div>
+  </section>
+  <section class="screen" id="screen-stats">
+    <div class="wrap" id="statsWrap"></div>
+  </section>
+  <section class="screen" id="screen-settings">
+    <div class="wrap" id="settingsWrap"></div>
+  </section>
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="/assets/js/app.js"></script>
+<script src="/assets/js/manage.js"></script>
+<script>MM_ADMIN.boot();</script>
+</body>
+</html>

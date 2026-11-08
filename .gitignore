@@ -1,0 +1,8 @@
+*.apk
+*.jks
+.gradle/
+build/
+local.properties
+.idea/
+.DS_Store
+app/native/app/src/main/assets/

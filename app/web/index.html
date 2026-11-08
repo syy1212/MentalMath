@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-mode="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>口算天天练</title>
+<link rel="stylesheet" href="assets/css/app.css">
+<script>
+/* 主题先行：用缓存避免闪烁（正式加载后再按配置修正） */
+(function () {
+  try {
+    var cached = localStorage.getItem('mm_mode');
+    if (cached === 'dark' || cached === 'light') document.documentElement.setAttribute('data-mode', cached);
+  } catch (e) {}
+})();
+</script>
+</head>
+<body class="practice-page">
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="brand" id="brand"><img class="brand-mark" src="assets/img/icon.png" alt=""><span>口算</span><span>天天练</span></div>
+    <div class="today-pill" id="todayPill">今日未开始</div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 练习（设备端唯一主功能；题库管理在局域网网页 /admin/） -->
+  <section class="screen active" id="screen-practice">
+    <div class="wrap">
+      <div id="practiceHome"><div class="empty" role="status">正在准备练习…</div></div>
+      <div id="practiceRound" class="hidden"></div>
+    </div>
+  </section>
+
+  <!-- 练习记录 -->
+  <section class="screen" id="screen-stats">
+    <div class="wrap" id="statsWrap"></div>
+  </section>
+
+  <!-- 家长配对（品牌连点 5 次进入） -->
+  <section class="screen" id="screen-pair">
+    <div class="wrap" id="pairWrap"></div>
+  </section>
+
+</main>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/app.js"></script>
+<script src="assets/js/qrcode.min.js"></script>
+<script src="assets/js/practice.js"></script>
+<script src="assets/js/manage.js"></script>
+<script>MM.boot();</script>
+</body>
+</html>

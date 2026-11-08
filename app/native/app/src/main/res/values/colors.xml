@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 小鲸鱼图标背景珊瑚色（取自源图四角平均） -->
+    <color name="ic_launcher_bg">#FB9085</color>
+</resources>
